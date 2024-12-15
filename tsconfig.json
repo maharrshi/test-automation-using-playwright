@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",                      
+      "module": "CommonJS",                   
+      "lib": ["DOM", "ESNext"],               
+      "strict": true,                         
+      "esModuleInterop": true,                
+      "skipLibCheck": true,                    
+      "outDir": "./dist",                    
+      "rootDir": "./src",                     
+      "resolveJsonModule": true,               
+      "types": ["node", "playwright"],         
+      "moduleResolution": "node",            
+      "allowJs": true,                      
+      "noImplicitReturns": true,               
+      "forceConsistentCasingInFileNames": true 
+    },
+    "include": [
+      "src/**/*.ts",            
+      "tests/**/*.ts"         
+    ],
+    "exclude": [
+      "node_modules",         
+      "dist"                    
+    ]
+  }
+  
