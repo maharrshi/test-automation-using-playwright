@@ -18,11 +18,9 @@ test.describe("Add and update employee", () => {
   const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "";
 
   test("Add employee and create login credentials", async ({ page }) => {
-    // Arrange
     const loginPage = new LoginPage(page);
     const pimPage = new PIMPage(page);
 
-    // Act
     // Admin logs in
     await loginPage.goto();
     await loginPage.login(ADMIN_USERNAME, ADMIN_PASSWORD);
@@ -34,18 +32,14 @@ test.describe("Add and update employee", () => {
     // Admin logs out
     await loginPage.logout();
 
-    // Assert
-    // Add assertions as required (e.g., success message, user validation).
     console.log(
       `Employee ${username1} with ID ${empId1} created successfully.`
     );
   });
 
   test("Update employee details", async ({ page }) => {
-    // Arrange
     const loginPage = new LoginPage(page);
 
-    // Act
     // Employee logs in
     await loginPage.goto();
     await loginPage.login(username1, username1);
@@ -66,7 +60,6 @@ test.describe("Add and update employee", () => {
       .getByRole("button")
       .click();
 
-    // Assert
     // Verify success message and gender update
     await expect(page.getByText("Successfully Updated")).toBeVisible();
     await expect(page.locator(`//label[text()="Male"]`)).toBeChecked();

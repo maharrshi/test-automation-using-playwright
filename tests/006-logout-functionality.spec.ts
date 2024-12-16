@@ -21,13 +21,14 @@ test.describe("Employee Management Workflow Tests", () => {
   test("Create an employee", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const pimPage = new PIMPage(page);
-
     const adminUsername = process.env.ADMIN_USERNAME ?? "";
     const adminPassword = process.env.ADMIN_PASSWORD ?? "";
 
+    //Login admin user
     await loginPage.goto();
     await loginPage.login(adminUsername, adminPassword);
 
+    //Add an employee
     await pimPage.navigateToPIM();
     await pimPage.addEmployee(...user1Details);
     await pimPage.logout();
@@ -38,6 +39,7 @@ test.describe("Employee Management Workflow Tests", () => {
   }) => {
     const loginPage = new LoginPage(page);
 
+    //Login the created user and logout the same user
     await page.goto(BASE_URL);
     await loginPage.login(username1, username1);
     await loginPage.logout();

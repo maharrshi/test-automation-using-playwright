@@ -22,7 +22,9 @@ const userDetails: [string, string, string, string, string] = [
 ];
 
 test.describe("Leave Management Flow", () => {
-  test.beforeEach(async ({ page }) => {
+
+
+  test("Create employee and assign leaves ", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const pimPage = new PIMPage(page);
     const leavePage = new LeavePage(page);
@@ -42,9 +44,8 @@ test.describe("Leave Management Flow", () => {
 
     //Step 3: Logout Admin
     await loginPage.logout();
-  });
-
-  test("Employee applies for leave and admin approves it", async ({ page }) => {
+  })
+  test("Employee applies for leave ", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const currentDate = new Date().toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
     const nextDate = new Date(Date.now() + 24 * 60 * 60 * 1000)
@@ -62,31 +63,28 @@ test.describe("Leave Management Flow", () => {
 
     // Log out Employee
     await loginPage.logout();
-
   });
-
 });
 test.describe("Leave Management Flow continued", () => {
+  test("Admin approves Leave", async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const leavePage = new LeavePage(page);
 
-test("Admin approves Leave", async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const leavePage = new LeavePage(page);
+    //  Login admin user and Leave Approval
+    await loginPage.goto();
+    await loginPage.login(ADMIN_USERNAME, ADMIN_PASSWORD);
 
-   //  Login admin user and Leave Approval
-   await loginPage.goto();
-await loginPage.login(ADMIN_USERNAME, ADMIN_PASSWORD);
+    await page.waitForSelector('(//img[@alt="profile picture"])[1]');
 
-await page.waitForSelector('(//img[@alt="profile picture"])[1]');
+    // Approve leave
+    await loginPage.navigateToLeavePage();
+    await loginPage.approveLeave(username);
+    await loginPage.logout();
 
-// Approve leave
-await loginPage.navigateToLeavePage();
-await loginPage.approveLeave(username);
-await loginPage.logout();
+    //Login to the employee and verify the status to be as "Scheduled"
+    await loginPage.login(username, username);
+    await page.waitForTimeout(5000);
 
-//Login to the employee and verify the status to be as "Scheduled"
-await loginPage.login(username, username);
-await page.waitForTimeout(5000);
-
-await leavePage.getLeaveStatus();
-})
-})
+    await leavePage.getLeaveStatus();
+  });
+});

@@ -2,15 +2,13 @@
 import { test, expect } from "@playwright/test";
 
 test("search employee by name", async ({ page }) => {
-  const baseURL =
-    "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+  const baseURL = process.env.BASE_URL ?? "";
   const adminCredentials = {
     username: "Admin",
     password: "admin123",
   };
   const searchQuery = "playwright";
 
-  // Act: Perform the actions
   // Navigate to the login page
   await page.goto(baseURL);
 
@@ -28,6 +26,5 @@ test("search employee by name", async ({ page }) => {
     .click();
   await page.getByRole("button", { name: "Search" }).click();
 
-  // Assert: Verify the expected outcomes
   await expect(page.getByText("(1) Record Found")).toBeVisible();
 });
