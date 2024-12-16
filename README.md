@@ -11,6 +11,8 @@ This repository contains automated test scripts for Playwright assignments, prov
 2. **Page Object Model (POM)**
    - The project follows the Page Object Model design pattern.
    - Page-specific classes and methods are located in the `/pages` folder.
+3. **Credentials**
+    - Base url and the user credentials are stored in the `.env` file
 
 ## Configuration
 
@@ -27,4 +29,5 @@ This repository contains automated test scripts for Playwright assignments, prov
 
 - Refer to the LMS for detailed descriptions of each test case.
 - For troubleshooting or modifying test configurations, review the playwright.config.ts file.
-- for the leave workflow, additionally assigning the leave the created employee is implemented which is currently not present in the test case
+- for the leave workflow, additionally assigning the leave the created employee is implemented which is currently not present in the test case.
+
