@@ -13,7 +13,7 @@ export default defineConfig({
   reporter: [['html', { outputFolder: 'html-report' }]], // Test result reporters
   use: {
     baseURL: 'https://opensource-demo.orangehrmlive.com/', // Base URL for the tests
-    headless: false, 
+    headless: true, 
     viewport: { width: 1280, height: 720 }, 
     ignoreHTTPSErrors: true, 
     video: 'on-first-retry', 
