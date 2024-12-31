@@ -115,7 +115,7 @@ This scenario tests user management and the order flow within WooCommerce.
 From the root of the directory, run:
 
 ```bash
-npx playwright test tests/assignmwp-e2e-utils-assignment --config=playwright-2.spec.ts
+npx playwright test specs/assignmwp-e2e-utils-assignment --config=playwright-2.spec.ts
 ```
 
 ## Project Structure
@@ -130,7 +130,7 @@ test-automation-using-playwright/
 │   ├── customerPage.ts        # POM for managing customers
 │   ├── productPage.ts         # POM for managing products
 │
-└── tests/                     # Test specifications folder
+└── specs/                     # Test specifications folder
     └── wp-e2e-utils-assignment/            # Assignment-specific test cases
         ├── coupon-management.spec.ts # Test for Coupon Management
         ├── product-management.spec.ts # Test for Product Management

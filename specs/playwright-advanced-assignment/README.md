@@ -115,7 +115,7 @@ ADMIN_PASSWORD
 From the root of the directory, run:
 
 ```bash
-npx playwright test tests/playwright-advanced-assignment --config=playwright.spec.ts
+npx playwright test specs/playwright-advanced-assignment --config=playwright.spec.ts
 ```
 
 ## Project Structure
@@ -132,6 +132,6 @@ test-automation-using-playwright/
 │   ├── MyInfoPage.ts          # POM for managing profile
 │   ├── PIMPage.ts             # POM for managing PIM
 │
-└── tests/                                        # Test specifications folder
+└── specs/                                        # Test specifications folder
     └── playwright-advanced-assignment/           # Assignment-specific test 
 
