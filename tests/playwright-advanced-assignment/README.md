@@ -134,3 +134,4 @@ test-automation-using-playwright/
 │
 └── tests/                                        # Test specifications folder
     └── playwright-advanced-assignment/           # Assignment-specific test 
+

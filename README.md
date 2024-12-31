@@ -35,5 +35,5 @@ This repository contains automated test scripts for Playwright assignments, prov
 
 
 - For troubleshooting or modifying test configurations, review the playwright.config.ts file.
-- for the leave workflow, additionally assigning the leave the created employee is implemented which is currently not present in the test case.
+
 

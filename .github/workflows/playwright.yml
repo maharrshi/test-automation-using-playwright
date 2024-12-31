@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests for assignment 01- playwright Advanced
-      run: npx playwright test tests/playwright-advanced-assignment --config=playwright-2.config.ts
+      run: npx playwright test tests/playwright-advanced-assignment --config=playwright.config.ts
     - name: Run Playwright tests for assignment 02- wordpress e2e utils for playwright
       run: npx playwright test tests/wp-e2e-utils-assignment --config=playwright-2.config.ts
     - uses: actions/upload-artifact@v4
