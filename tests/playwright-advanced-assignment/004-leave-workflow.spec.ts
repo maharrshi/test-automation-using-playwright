@@ -1,9 +1,9 @@
 // EmployeeLeaveTest.ts
 import { test } from "@playwright/test";
 import dotenv from "dotenv";
-import { LoginPage } from "../pages/loginPage";
-import { PIMPage } from "../pages/PIMPage";
-import { LeavePage } from "../pages/leavePage";
+import { LoginPage } from "../../pages/loginPage";
+import { PIMPage } from "../../pages/PIMPage";
+import { LeavePage } from "../../pages/leavePage";
 
 dotenv.config();
 

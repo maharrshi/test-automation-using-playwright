@@ -4,30 +4,36 @@ This repository contains automated test scripts for Playwright assignments, prov
 
 ## Repository Structure
 
-1. **Test Scripts**
+1. **Test Scripts **
    - All test scripts are organized under the `/tests` folder.
-   - The files are sequentially numbered to correspond with the test cases outlined in the LMS.
+   - Scripts are placed in two folders. One folder contains the test files related to playwright Advanced under `/tests/playwright-advanced` and the other file contains test files that have used wordpress e2e-utils `/tests/wp-e2e-utils-assignment`
 
 2. **Page Object Model (POM)**
    - The project follows the Page Object Model design pattern.
    - Page-specific classes and methods are located in the `/pages` folder.
+
 3. **Credentials**
     - Base url and the user credentials are stored in the `.env` file
 
 ## Configuration
 
-- The tests are configured to run in **headless mode**, as specified in the `playwright.config.ts` file.
+- The tests are configured to run in **headless mode**, as specified in the `playwright.config.ts` and `playwright-2.config.ts`
+- The repository contains two config files as each of them represents configuration for different projects.
 
 ## How to Run the Tests
 
 1. Ensure all dependencies are installed by running:
    npm install
 
+2. Install playwright browsers
+   npx playwright install
+
 2. Execute the tests using the following command:
-   npx playwright test
+   npx playwright test tests/project-name --config=respective-config-file
+
 ## Additional notes
 
-- Refer to the LMS for detailed descriptions of each test case.
+
 - For troubleshooting or modifying test configurations, review the playwright.config.ts file.
 - for the leave workflow, additionally assigning the leave the created employee is implemented which is currently not present in the test case.
 

@@ -1,9 +1,9 @@
 import { test } from "@playwright/test";
 import dotenv from "dotenv";
 dotenv.config();
-import { LoginPage } from "../pages/loginPage";
-import { PIMPage } from "../pages/PIMPage";
-import { MyInfoPage } from "../pages/MyInfoPage";
+import { LoginPage } from "../../pages/loginPage";
+import { PIMPage } from "../../pages/PIMPage";
+import { MyInfoPage } from "../../pages/MyInfoPage";
 
 test.describe("Employee Management Workflow Tests", () => {
   const empId1 = Math.floor(10000000 + Math.random() * 90000000).toString();

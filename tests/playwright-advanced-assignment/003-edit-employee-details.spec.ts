@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 import dotenv from "dotenv";
 dotenv.config();
-import { LoginPage } from "../pages/loginPage";
-import { PIMPage } from "../pages/PIMPage";
+import { LoginPage } from "../../pages/loginPage";
+import { PIMPage } from "../../pages/PIMPage";
 
 test.describe("Add and update employee", () => {
   const empId1 = Math.floor(10000000 + Math.random() * 90000000).toString();
