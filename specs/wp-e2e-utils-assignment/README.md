@@ -5,7 +5,6 @@ This repository contains end-to-end (E2E) tests for WooCommerce using Playwright
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
 - [Configuration](#configuration)
 - [Test Scenarios](#test-scenarios)
   - [Scenario 1: Product Management](#scenario-1-product-management)
@@ -21,27 +20,6 @@ Before you begin, ensure you have met the following requirements:
 - **Node.js** installed
 - **npm** installed
 - Access to a WooCommerce store for testing purposes
-
-## Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/rtCamp/qa.git
-   cd qa-frameworks/wp-e2e-playwright
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Install Playwright Browsers**
-
-   ```bash
-   npx playwright install
-   ```
 
 ## Configuration
 
