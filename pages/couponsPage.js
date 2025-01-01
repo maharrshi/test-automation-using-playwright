@@ -26,6 +26,7 @@ export class CouponPage {
     //Verify the coupon is created
     await expect(this.page.getByText("Coupon updated.")).toBeVisible();
   }
+  //This function is used for logging in a customer for woocommerce
   async loginCustomer(username, password) {
     await this.page.getByLabel("Login").click();
     await this.page.getByLabel("Username or email address *").fill(username);
@@ -33,36 +34,45 @@ export class CouponPage {
     await this.page.getByRole("button", { name: "Log in" }).click();
     await expect(this.page.getByText(username).first()).toBeVisible();
   }
+  //Customer verifies the functionality of coupon
   async verifyCouponByCustomer(coupon) {
     await this.page.goto(`/shop`);
+
     //Add two items to cart:
     await this.page.locator(`//ul//li[1]//span[text()="Add to cart"]`).click();
     await this.page.locator(`//ul//li[2]//span[text()="Add to cart"]`).click();
+
     //Verify two items in cart shown as a symbol
     await expect(
       this.page.locator(`//button[@aria-label="2 items in cart"]`)
     ).toBeVisible();
+
     //Goto cart
     await this.page.getByLabel("items in cart").click();
     await this.page.getByRole("link", { name: "Go to checkout" }).click();
+
     //Total Value before coupon is applied:
     const subTotalPrice = await this.page
       .locator(`//span[text()="Subtotal"]//following-sibling::span`)
       .innerText();
     console.log("subTotalPrice          ", subTotalPrice);
+
     //Apply the coupon:
     await this.page.getByRole("button", { name: "Add a coupon" }).click();
     await this.page.getByLabel("Enter code").click();
     await this.page.getByLabel("Enter code").fill(coupon.name);
     await this.page.getByRole("button", { name: "Apply" }).click();
+
     //Verify the coupon is applied:
     await expect(
       this.page.getByText(coupon.name, { exact: true })
     ).toBeVisible();
+
     let expectedPriceAfterDiscount = `₹${(
       parseFloat(subTotalPrice.replace(/[₹,]/g, "")) -
       parseFloat(coupon.discount)
     ).toFixed(2)}`;
+
     console.log(
       "expectedPriceAfterDiscount          ",
       expectedPriceAfterDiscount
@@ -72,13 +82,16 @@ export class CouponPage {
       .locator(`//div[contains(@class,"totals-item__value")]//span`)
       .innerText();
     console.log("priceAfterDiscount          ", priceAfterDiscount);
+
     //Verify the  price after coupon is applied:
     expect(priceAfterDiscount).toEqual(expectedPriceAfterDiscount);
   }
+  //Go to admin page
   async gotoAdminPage() {
     await this.page.goto(`/wp-admin`);
   }
 
+  //Login admin user to wordpress
   async loginAdmin(username) {
     await this.page.getByLabel("Username or Email Address").click();
     await this.page.getByLabel("Username or Email Address").fill(username);
