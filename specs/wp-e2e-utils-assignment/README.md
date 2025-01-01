@@ -93,7 +93,7 @@ This scenario tests user management and the order flow within WooCommerce.
 From the root of the directory, run:
 
 ```bash
-npx playwright test specs/assignmwp-e2e-utils-assignment --config=playwright-2.spec.ts
+npx playwright test specs/wp-e2e-utils-assignment --config=playwright-2.spec.ts
 ```
 
 ## Project Structure
