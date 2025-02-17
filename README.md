@@ -5,8 +5,8 @@ This repository contains automated test scripts for Playwright assignments, prov
 ## Repository Structure
 
 1. **Test Scripts **
-   - All test scripts are organized under the `/tests` folder.
-   - Scripts are placed in two folders. One folder contains the test files related to playwright Advanced under `/tests/playwright-advanced` and the other file contains test files that have used wordpress e2e-utils `/tests/wp-e2e-utils-assignment`
+   - All test scripts are organized under the `/specs` folder.
+   - Scripts are placed in two folders. One folder contains the test files related to playwright Advanced under `/tests/playwright-advanced` and the other file contains test files that have used wordpress e2e-utils `/specs/wp-e2e-utils-assignment`
 
 2. **Page Object Model (POM)**
    - The project follows the Page Object Model design pattern.
@@ -29,7 +29,7 @@ This repository contains automated test scripts for Playwright assignments, prov
    npx playwright install
 
 2. Execute the tests using the following command:
-   npx playwright test tests/project-name --config=respective-config-file
+   `npx playwright test specs/project-name --config=respective-config-file`
 
 ## Additional notes
 
