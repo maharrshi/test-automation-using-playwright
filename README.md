@@ -29,7 +29,7 @@ This repository contains automated test scripts for Playwright assignments, prov
    npx playwright install
 
 2. Execute the tests using the following command:
-   `npx playwright test tests/project-name --config=respective-config-file`
+   `npx playwright test specs/project-name --config=respective-config-file`
 
 ## Additional notes
 
