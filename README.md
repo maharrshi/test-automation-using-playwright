@@ -2,6 +2,20 @@
 
 This repository contains automated test scripts for Playwright assignments, providing a structured approach to testing with the following features:
 
+## This Repo includes the following features Implemented
+| Task                          | Status |
+|-------------------------------|--------|
+| GitHub Actions                | ✅     |
+| Page Object Model             | ✅     |
+| E2E tests                     | ✅     |
+| API tests                     |  [wip] |
+| Mobile ViewPorts tests        | [wip]  | 
+| Reuse authentication state    | [wip]  |
+| Multiple browser tabs         | [wip]  |
+| Data driven tests             | [wip]  |
+| Visual Testing/Comparisons    | ✅     |
+
+
 ## Repository Structure
 
 1. **Test Scripts **
