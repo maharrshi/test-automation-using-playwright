@@ -23,7 +23,7 @@ jobs:
     #- name: Run Playwright tests for assignment 02- wordpress e2e utils for playwright
     #  run: npx playwright test specs/wp-e2e-utils-assignment --config=playwright-2.config.ts
     - name: VISUAL TEST Create Baseline Snapshots
-      run: npx playwright test /visual-tests/ --update-snapshots 
+      run: npx playwright test /visual-tests --update-snapshots 
     - name: VISUAL TEST Run against Baseline Snapshots
       run: npx playwright test /visual-tests 
 
