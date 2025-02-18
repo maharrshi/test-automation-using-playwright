@@ -23,9 +23,9 @@ jobs:
     - name: Run Playwright tests for assignment 02- wordpress e2e utils for playwright
       run: npx playwright test specs/wp-e2e-utils-assignment --config=playwright-2.config.ts
     - name: VISUAL TEST Create Baseline Snapshots
-      run: npx playwright test /visual-tests --update-snapshots --config=playwright.config.ts
+      run: npx playwright test visual-tests/ --update-snapshots --config=playwright.config.ts
     - name: VISUAL TEST Run against Baseline Snapshots
-      run: npx playwright test /visual-tests --config=playwright.config.ts
+      run: npx playwright test visual-tests/ --config=playwright.config.ts
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
