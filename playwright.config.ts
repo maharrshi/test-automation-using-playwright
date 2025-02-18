@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
-  testDir: './tests', // Directory where test files are located
+  testDir: './specs', // Directory where test files are located
   timeout: 30000, 
   expect: {
     timeout: 10000, 

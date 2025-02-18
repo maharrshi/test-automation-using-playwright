@@ -58,4 +58,10 @@ export class PIMPage {
     //Verify the login page is visible
     await expect(this.page.locator('//h5[text()="Login"]')).toBeVisible();
   }
+  async  waitForSpinnerToDisappear() {
+    const spinnerLocator = '.oxd-loading-spinner';
+
+    // Wait for the spinner to be detached (completely removed from the DOM)
+    await this.page.waitForSelector(spinnerLocator, { state: 'detached', timeout: 10000 }); // Timeout set to 10 seconds
+}
 }
