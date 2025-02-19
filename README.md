@@ -8,46 +8,16 @@ This repository contains automated test scripts for Playwright assignments, prov
 | GitHub Actions                | ✅     |
 | Page Object Model             | ✅     |
 | E2E tests                     | ✅     |
-| API tests                     |  [wip] |
+| API tests                     | ✅     |
 | Mobile ViewPorts tests        | [wip]  | 
-| Reuse authentication state    | [wip]  |
+| Reuse authentication state    | ✅     |
 | Multiple browser tabs         | [wip]  |
-| Data driven tests             | [wip]  |
+| Data driven tests             | ✅     |
 | Visual Testing/Comparisons    | ✅     |
 
 
 ## Repository Structure
+This repository contains folders like api-testing, playwright-assignment, etc. Each sub repositories will have their own playwright.config.ts file configured according to their requirements. Please go through their README.md files to understand the sub repo structure
 
-1. **Test Scripts **
-   - All test scripts are organized under the `/specs` folder.
-   - Scripts are placed in two folders. One folder contains the test files related to playwright Advanced under `/tests/playwright-advanced` and the other file contains test files that have used wordpress e2e-utils `/specs/wp-e2e-utils-assignment`
-
-2. **Page Object Model (POM)**
-   - The project follows the Page Object Model design pattern.
-   - Page-specific classes and methods are located in the `/pages` folder.
-
-3. **Credentials**
-    - Base url and the user credentials are stored in the `.env` file
-
-## Configuration
-
-- The tests are configured to run in **headless mode**, as specified in the `playwright.config.ts` and `playwright-2.config.ts`
-- The repository contains two config files as each of them represents configuration for different projects.
-
-## How to Run the Tests
-
-1. Ensure all dependencies are installed by running:
-   npm install
-
-2. Install playwright browsers
-   npx playwright install
-
-2. Execute the tests using the following command:
-   `npx playwright test specs/project-name --config=respective-config-file`
-
-## Additional notes
-
-
-- For troubleshooting or modifying test configurations, review the playwright.config.ts file.
 
 

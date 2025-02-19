@@ -1,0 +1,9 @@
+{
+    "BASE_URL": "http://test-fakerpress.local/wp-json",
+    "post": {
+      "title": "Test Post",
+      "content": "This is a test post created via API.",
+      "status": "publish"
+    }
+  }
+  
