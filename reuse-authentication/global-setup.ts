@@ -14,8 +14,8 @@ async function globalSetup() {
     const context = await browser.newContext({
       httpCredentials: {
         username: process.env.HTTP_USN || "",
-        password: process.env.HTTP_PWD || ""
-      }
+        password: process.env.HTTP_PWD || "",
+      },
     });
     const page: Page = await context.newPage();
     const login = new LoginPage(page);

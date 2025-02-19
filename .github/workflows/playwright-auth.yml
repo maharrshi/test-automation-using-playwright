@@ -26,7 +26,6 @@ jobs:
           npx playwright install --with-deps
 
       - name: Run Playwright Script through storage state
-        continue-on-error: true
         run: |
           cd reuse-authentication
           npx playwright test 

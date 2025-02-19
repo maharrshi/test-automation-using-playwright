@@ -7,16 +7,18 @@ export class LoginPage {
   constructor(private page: Page) {}
 
   async gotoLogin() {
-    await this.page.goto(baseURL+"wp-login.php");
+    await this.page.goto(baseURL + "wp-login.php");
   }
 
   async loginUser(username: string, password: string) {
-
+    await this.page.waitForSelector("#user_login", {
+      state: "visible",
+      timeout: 60000,
+    });
     await this.page.fill("#user_login", username);
     await this.page.fill("#user_pass", password);
     await this.page.click("#wp-submit");
-  // Ensure login is successful
-  await expect(this.page).toHaveURL(baseURL);
-
-}
+    // Ensure login is successful
+    await expect(this.page).toHaveURL(baseURL);
+  }
 }
