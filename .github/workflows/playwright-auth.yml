@@ -2,8 +2,7 @@ name: Playwright Testing for authentications
 on:
   push:
     branches: [ main, master ]
-    paths:
-      - 'reuse-authentication/**'
+
   pull_request:
     branches: [ main, master ]
     paths:
