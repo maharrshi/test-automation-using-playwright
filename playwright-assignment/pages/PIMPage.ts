@@ -15,7 +15,9 @@ export class PIMPage {
     password: string
   ) {
     await this.page.getByRole("link", { name: "Add Employee" }).click();
+    await this.page.waitForTimeout(2000)
     await this.page.getByPlaceholder("First Name").fill(firstName);
+    await this.page.waitForTimeout(2000)
     await this.page.getByPlaceholder("Last Name").fill(lastName);
     await this.page
       .locator("form")

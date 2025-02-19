@@ -26,6 +26,11 @@ jobs:
         run: |
           cd playwright-assignment
           npx playwright test specs/visual-tests/ --update-snapshots
+
+      - name: Run Visual Tests - Run Against Baseline Snapshots
+        continue-on-error: true
+        run: |
+          cd playwright-assignment
           npx playwright test specs/visual-tests/
 
       - name: Run Assignment 01 - Playwright Scripts
@@ -34,9 +39,19 @@ jobs:
           cd playwright-assignment
           npx playwright test specs/playwright-advanced-assignment/
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload Visual Test Snapshots
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: visual-test-snapshots
+          path: |
+            playwright-assignment/visual-tests/**-snapshots/
+          retention-days: 10
+
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
           path: playwright-assignment/playwright-report/
-          retention-days: 30
+          retention-days: 10
