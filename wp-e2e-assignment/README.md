@@ -1,26 +1,12 @@
-# Test Automation Using Playwright
+# Test Automation Using Wordpress e2e package
 
-This repository contains automated test scripts for Playwright assignments, providing a structured approach to testing with the following features:
-
-## This Repo includes the following features Implemented
-| Task                          | Status |
-|-------------------------------|--------|
-| GitHub Actions                | ✅     |
-| Page Object Model             | ✅     |
-| E2E tests                     | ✅     |
-| API tests                     |  [wip] |
-| Mobile ViewPorts tests        | [wip]  | 
-| Reuse authentication state    | [wip]  |
-| Multiple browser tabs         | [wip]  |
-| Data driven tests             | [wip]  |
-| Visual Testing/Comparisons    | ✅     |
-
+This repository contains automated test scripts for Playwright assignments and visual testing, providing a structured approach to testing with the following features:
 
 ## Repository Structure
 
 1. **Test Scripts **
    - All test scripts are organized under the `/specs` folder.
-   - Scripts are placed in two folders. One folder contains the test files related to playwright Advanced under `/tests/playwright-advanced` and the other file contains test files that have used wordpress e2e-utils `/specs/wp-e2e-utils-assignment`
+   - Scripts are placed in under the `wp-e2e-scripts` folders. 
 
 2. **Page Object Model (POM)**
    - The project follows the Page Object Model design pattern.
@@ -31,8 +17,42 @@ This repository contains automated test scripts for Playwright assignments, prov
 
 ## Configuration
 
-- The tests are configured to run in **headless mode**, as specified in the `playwright.config.ts` and `playwright-2.config.ts`
-- The repository contains two config files as each of them represents configuration for different projects.
+- The tests are configured to run in **headless mode**, as specified in the `playwright.config.ts`
+
+## Test Scenarios for wordpress e2e utils Assignment
+
+### Scenario 1: Coupon Management
+
+- Create different types of coupons (percentage, fixed amount)
+- Apply coupons during checkout
+- Verify discount calculations
+
+**Test File:** `product-management.spec.ts`
+
+---
+
+### Scenario 2: Product Management
+
+- Product Management
+- Create a simple product.
+- Add product categories and tags.
+- Upload product images
+- Set pricing and inventory
+- Publish and verify product visibility
+
+**Test File:** `product-management.spec.ts`
+
+---
+
+### Scenario 3: User Management
+
+- Create a customer user
+- Customer places order
+- Admin/Store manager reviews the order
+
+**Test File:** `user-management.spec.ts`
+
+---
 
 ## How to Run the Tests
 
@@ -43,7 +63,7 @@ This repository contains automated test scripts for Playwright assignments, prov
    npx playwright install
 
 2. Execute the tests using the following command:
-   `npx playwright test specs/project-name --config=respective-config-file`
+   `npx playwright test specs/file_name`
 
 ## Additional notes
 
