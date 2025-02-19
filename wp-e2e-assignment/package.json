@@ -1,5 +1,5 @@
 {
-  "name": "test-automation-using-playwright-1",
+  "name": "wordpress-e2e-assignment",
   "version": "1.0.0",
   "description": "Capturing all the learnings of test automation using playwright",
   "main": "index.js",

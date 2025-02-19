@@ -1,5 +1,5 @@
 {
-  "name": "playwright-assignment",
+  "name": "reuse-authentication",
   "version": "1.0.0",
   "description": "Capturing all the learnings of test automation using playwright",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@playwright/test": "^1.50.1",
+    "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
     "@wordpress/e2e-test-utils-playwright": "^1.14.0",
     "backstopjs": "^6.3.25",

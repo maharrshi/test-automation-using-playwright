@@ -9,11 +9,11 @@ This repository contains automated test scripts for Playwright assignments, prov
 | Page Object Model             | ✅     |
 | E2E tests                     | ✅     |
 | API tests                     | ✅     |
-| Mobile ViewPorts tests        | [wip]  | 
+| Mobile ViewPorts tests        | ✅     | 
 | Reuse authentication state    | ✅     |
-| Multiple browser tabs         | [wip]  |
 | Data driven tests             | ✅     |
 | Visual Testing/Comparisons    | ✅     |
+| HTTP Authentication           | ✅     |
 
 
 ## Repository Structure

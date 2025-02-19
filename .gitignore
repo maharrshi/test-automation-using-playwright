@@ -1,5 +1,3 @@
-# Ignore all node_modules in subfolders
-
 **/node_modules/
 **/test-results/
 **/playwright-report/
@@ -9,3 +7,4 @@ playwright-assignment/node_modules/
 playwright-assignment/test-results
 playwright-assignment/html-report
 playwright-assignment/playwright-report
+**/LoginAuth.json
