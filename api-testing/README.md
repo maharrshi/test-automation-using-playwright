@@ -10,6 +10,11 @@ This repository contains automated test scripts for API testing using Playwright
 
 2. **Credentials**
     - Base url, username and application password is stored in the `.env` file
+  
+3. **Data Driven Testing**
+   - `testData.json` file contains data that is being passed to test files as payload
+
+   
 
 ## Configuration
 
