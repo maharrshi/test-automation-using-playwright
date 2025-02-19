@@ -2,8 +2,12 @@ name: Playwright Testing
 on:
   push:
     branches: [ main, master ]
+    paths:
+      - 'playwright-assignment/**'
   pull_request:
     branches: [ main, master ]
+    paths:
+      - 'playwright-assignment/**'
 
 jobs:
   test:

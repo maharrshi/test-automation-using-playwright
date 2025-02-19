@@ -7,11 +7,10 @@ dotenv.config();
 const username = process.env.MANOJ_USERNAME || "";
 const password = process.env.MANOJ_PASSWORD || "";
 
-
 async function globalSetup() {
   let browser: Browser | null = null;
   try {
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true });
     const context = await browser.newContext({
       httpCredentials: {
         username: process.env.HTTP_USN || "",

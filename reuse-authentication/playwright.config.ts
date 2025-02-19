@@ -4,17 +4,20 @@ import { devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
     globalSetup: './global-setup',
     testDir: './tests',
-   
-    outputDir: 'test-results',
-
-    /* Shared settings for all the projects below.*/
+    timeout: 30000, 
+    expect: {
+      timeout: 10000, 
+    },
+    retries: 0, 
+    workers: process.env.CI ? 1 : undefined, 
+    reporter: [['html', { outputFolder: 'html-report' }]],
     use: {
         actionTimeout: 0,
         baseURL: 'https://manoj-maharrshi.rt.gw/',
         trace: 'on-first-retry',
         storageState: './LoginAuth.json',
         /* Set headless */
-        headless: false,
+        headless: true,
         httpCredentials: {
           username: process.env.HTTP_USN || "",
           password: process.env.HTTP_PWD || ""
@@ -48,7 +51,6 @@ const config: PlaywrightTestConfig = {
         /* Test against mobile viewports. */
          {
            name: 'Mobile Chrome',
-           testMatch: /.*TestMatch.spec.ts/,
            use: {
              ...devices['Pixel 7'],
            },
