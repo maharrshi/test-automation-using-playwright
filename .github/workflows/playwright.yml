@@ -39,19 +39,10 @@ jobs:
           cd playwright-assignment
           npx playwright test specs/playwright-advanced-assignment/
 
-      - name: Upload Visual Test Snapshots
-        uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: visual-test-snapshots
-          path: |
-            playwright-assignment/visual-tests/**-snapshots/
-          retention-days: 10
-
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
-          path: playwright-assignment/playwright-report/
+          path: playwright-assignment/html-report/
           retention-days: 10
