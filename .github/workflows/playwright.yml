@@ -14,20 +14,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Install dependencies inside api-testing
+      - name: Install dependencies and Playwright Browsers
         run: |
           cd api-testing
           npm ci
-      - name: Install Playwright Browsers
-        run: |
-          cd api-testing
           npx playwright install --with-deps
-
-      - name: API Testing
+      - name: Run API Tests
         run: |
           cd api-testing
-          npx playwright test /api-testing/tests/
-   
+          npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
