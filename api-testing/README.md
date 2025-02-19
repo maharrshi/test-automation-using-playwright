@@ -5,7 +5,7 @@ This repository contains automated test scripts for API testing using Playwright
 ## Repository Structure
 
 1. **Test Scripts **
-   - All test scripts are organized under the `/specs` folder.
+   - All test scripts are organized under the `/tests` folder.
    - Scripts can be found with the name as `api-test-example.spec.ts`
 
 2. **Credentials**
