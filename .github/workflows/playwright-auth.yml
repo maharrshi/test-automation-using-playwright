@@ -39,8 +39,8 @@ jobs:
           retention-days: 10
 
       - name: Upload Playwright traces
-        if: always() # Ensures trace is uploaded even if tests fail
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: playwright-traces
           path: reuse-authentication/traces/
