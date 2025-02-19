@@ -17,8 +17,8 @@
     },
     "include": [
       "src/**/*.ts",            
-      "specs/**/*.ts"         
-, "playwright-3.config.ts"    ],
+      "specs/**/*.ts",         
+ ],
     "exclude": [
       "node_modules",         
       "dist"                    
